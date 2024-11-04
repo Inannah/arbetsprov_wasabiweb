@@ -1,0 +1,121 @@
+body{
+	margin: 0 auto;
+	max-width: 1200px;
+	display: grid;
+	grid-template-rows: auto auto 1.5em;
+	height: 100vh;
+}
+
+footer{
+	text-align: right;
+	padding: 0 0.5em;
+}
+
+h1{
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+
+h2, h3{
+	text-align: center;
+}
+
+.tab{
+	display: flex;
+	flex-flow: column nowrap;
+	padding: 0.5em;
+	gap: 0.5em;
+	text-align: center;
+}
+.tab-content{
+	display: none;
+	grid-column-start: 2;
+	max-width: 1000px; /*För läsbarhetens skull*/
+	padding: 0.5em;
+}
+
+.tab-content figure{
+	display: block;
+	width: 20em;
+	height: 12em;
+	margin: 0 auto;
+	border-radius: 5px;
+}
+	
+.tab-content img{
+	width: inherit;
+	height: inherit;
+	object-fit: cover;
+}
+
+#hidden-menu{
+	display: block;
+}
+
+#full-menu{
+	display: none;
+}
+
+summary{
+	display: block;
+	padding: 0.2em 0;
+	margin: 0 0.5em;
+	transition: 300ms;
+}
+	
+@media only screen and (min-width: 600px){
+	
+	#hidden-menu{
+		display: none;
+	}
+	
+	#full-menu{
+		display: block;
+	}
+	
+	body{
+	grid-template-rows: 3em auto 1.5em;
+
+	}
+	
+	header{
+		height: 3em;
+		line-height: 3em;
+	}
+	main{
+		display: grid;
+		grid-template-columns: 25% auto;
+		gap: 2em;
+	}
+	
+	.tab{
+		grid-column-start: 1;
+		gap: 1em;
+	}
+	.tab-button{
+		border-radius: 5px;
+	}
+	
+	.tab-content figure{
+		width: 24em;
+		height: 13.5em;
+	}
+}
+
+@media only screen and (min-width: 1000px){
+	main{
+		gap: 4em;
+	}
+	
+	h2{
+		text-align: left;
+	}
+	.tab-content figure{
+		display: inline-block;
+		width: 32em;
+		height: 18em;
+		float: right;
+		margin: 0 0 1em 2em;
+	}
+}
